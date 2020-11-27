@@ -11,7 +11,7 @@ def main():
     screen.bgcolor("black")
     screen.title("Snake Game")
     screen.tracer(0)
-    snake = Snake(6)
+    snake = Snake(16)
     food = Food()
     scoreboard = Scoreboard()
     screen.listen()
@@ -22,12 +22,23 @@ def main():
     screen.onkey(key="Escape", fun=screen.bye)
     game_is_on = True
     while game_is_on:
-        time.sleep(0.1)
+        screen.update()
+        time.sleep(0.09)
         snake.move()
         if snake.head.distance(food) <= 15:
             snake.eat()
             food.eaten()
             scoreboard.score_point()
+        if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
+            snake.die()
+            scoreboard.game_over()
+            game_is_on = False
+        for segment in snake.snake[1:]:
+            if snake.head.distance(segment) < 10:
+                segment.color("red")
+                scoreboard.game_over()
+                game_is_on = False
+
         screen.update()
 
     screen.exitonclick()

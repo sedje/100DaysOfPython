@@ -12,12 +12,20 @@ class Snake:
     def __init__(self, length):
         self.length = length
         self.snake = []
+        self.add_segments(length)
+        self.head = self.snake[0]
+
+    def add_segments(self, length):
         for i in range(length):
             self.snake.append(Turtle("square"))
             self.snake[i].color("white")
             self.snake[i].penup()
             self.snake[i].setx(-int(i * 20))
-        self.head = self.snake[0]
+
+    def eat(self):
+        t = Turtle("square")
+        self.snake.append(t)
+        self.snake[-1].setx(self.snake[-2].xcor() - 20)
 
     def move(self):
         for element in range(len(self.snake) - 1, 0, -1):
@@ -42,7 +50,7 @@ class Snake:
         if self.head.heading() != LEFT:
             self.head.setheading(RIGHT)
 
-    def eat(self):
-        self.snake.append(Turtle("square"))
-        self.snake[-1].penup()
-        self.snake[-1].setx(self.snake[-2].xcor() - 20)
+    def die(self):
+        for element in self.snake:
+            element.color("red")
+        print(len(self.snake))
