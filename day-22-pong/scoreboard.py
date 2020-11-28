@@ -1,17 +1,17 @@
 from turtle import Turtle
 
 ALIGNMENT = "center"
-FONT = ("Courier", 24, "bold")
+FONT = ("Courier", 32, "bold")
 
 
 class Scoreboard(Turtle):
 
-    def __init__(self):
+    def __init__(self, positions):
         super().__init__()
         self.player1 = 0
         self.player2 = 0
         self.penup()
-        self.goto(0, 260)
+        self.goto(positions)
         self.color("white")
         self.hideturtle()
         self.write(f"{self.player1}   {self.player2}", align=ALIGNMENT, font=FONT)

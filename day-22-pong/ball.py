@@ -14,13 +14,13 @@ class Ball(Turtle):
         super().__init__()
         self.shape("circle")
         self.penup()
-        self.game_speed = 20
+        self.game_speed = 0.05
         self.speed("fastest")
         self.color("white")
         self.setheading(choice(DIRECTIONS))
 
     def move(self):
-        self.forward(self.game_speed)
+        self.forward(10)
 
     def change_direction(self, paddle=False):
         if paddle:
@@ -46,15 +46,16 @@ class Ball(Turtle):
         self.hideturtle()
         self.clear()
         self.goto(0, 0)
+        self.game_speed = 0.05
         self.showturtle()
         self.setheading(choice(DIRECTIONS))
 
     def increase_speed(self):
         if self.game_speed < 40:
-            self.game_speed += 5
+            self.game_speed *= 0.9
             print(f"game speed now: {self.game_speed}")
 
     def decrease_speed(self):
-        if self.game_speed >= 10:
-            self.game_speed -= 5
+        if self.game_speed > 0:
+            self.game_speed /= 0.9
             print(f"game speed now: {self.game_speed}")
