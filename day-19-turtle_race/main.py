@@ -25,7 +25,6 @@ def main():
         print(turtles_colors[turtles.index(turtle)].title() + " finished at: " + str(turtle.position()[0]))
     check_win(winner, user_bet)
 
-
     screen.exitonclick()
 
 
