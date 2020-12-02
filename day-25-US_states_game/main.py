@@ -13,19 +13,22 @@ def main():
 
     states_guessed = []
     while len(states_guessed) < len(states):
-        answer = screen.textinput(title=f"{len(states_guessed)}/50 Guessed states", prompt="Guess the name of the "
-                                                                                           "states")
+        answer = screen.textinput(title=f"{len(states_guessed)}/50 Guessed states",
+                                  prompt="Guess the name of the states")
         if answer.lower() == "exit":
-            new_csv = []
-            for state in states.state:
-                if state not in states_guessed:
-                    state_data = states[states.state == state]
-                    x = int(state_data.x)
-                    y = int(state_data.y)
-                    new_csv.append([state])
+            # for state in states.state:
+            #     if state not in states_guessed:
+            #         state_data = states[states.state == state]
+            #         x = int(state_data.x)
+            #         y = int(state_data.y)
+            #         new_csv.append([state])
 
-            df = pandas.DataFrame(new_csv, columns=['state'])
-            df.to_csv("Missed_states.csv")
+            # Replaced code above with list comprehension method
+            new_csv = [(row.state, row.x, row.y) for (index, row) in states.iterrows()
+                       if row.state not in states_guessed]
+            df = pandas.DataFrame(new_csv)
+            df.columns = ['state', 'x', 'y']
+            df.to_csv("Missed_states.csv", index=False)
 
             screen.bye()
 
