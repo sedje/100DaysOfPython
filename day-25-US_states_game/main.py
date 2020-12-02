@@ -7,7 +7,7 @@ def main():
     screen.bgpic("blank_states_img.gif")
     screen.setup(width=725, height=491)
     screen.title("Guess the state game")
-    screen.onkey(screen.bye, "Escape")
+    screen.onkey(screen.exitonclick, "Escape")
     screen.listen()
     states = pandas.read_csv("50_states.csv")
 
@@ -28,6 +28,7 @@ def main():
             df.to_csv("Missed_states.csv")
 
             screen.bye()
+
         elif answer is not None:
             answer = answer.title()
 
