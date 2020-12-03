@@ -19,6 +19,7 @@ def main():
     kilos_result = Label(text="~")
     lbs = Entry()
 
+    # used grid to layout all stuff correctly"
     weight_label.grid(column=0, row=0)
     lbs.grid(column=2, row=0)
     kilos_label.grid(column=0, row=1)
