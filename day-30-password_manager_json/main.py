@@ -17,11 +17,14 @@ def main():
         try:
             with open(PASSWORD_FILE, 'r') as password_file:
                 data = json.load(password_file)
-                if website in data:
-                    username_entry.insert(0, data[website]['username'])
-                    pw_entry.insert(0, data[website]['password'])
         except FileNotFoundError as e:
-            print(f"File not found: {e.filename}")
+            messagebox.showerror(f"File not found: {e.filename}")
+        else:
+            if website in data:
+                username_entry.insert(0, data[website]['username'])
+                pw_entry.insert(0, data[website]['password'])
+            else:
+                messagebox.showinfo("Not found", f"Website '{website}' not found")
 
     # ---------------------------- PASSWORD GENERATOR ------------------------------- #
     def generate_password():
@@ -83,7 +86,7 @@ def main():
     website_entry = Entry()
     website_search = Button(text="search websites", command=search_password)
     website_entry.grid(column=1, row=1)
-    website_search.grid(column=2, row=1)
+    website_search.grid(column=2, row=1, sticky=E+W)
     website_label.grid(column=0, row=1)
     # email/username label + entry
     username_label = Label()
