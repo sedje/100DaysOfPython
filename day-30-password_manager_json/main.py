@@ -13,12 +13,13 @@ PASSWORD_FILE = "myPasswords.json"
 def main():
 
     def search_password():
+        website = website_entry.get().title()
         try:
             with open(PASSWORD_FILE, 'r') as password_file:
                 data = json.load(password_file)
-                if website_entry.get() in data:
-                    username_entry.insert(0, data[website_entry.get()]['username'])
-                    pw_entry.insert(0, data[website_entry.get()]['password'])
+                if website in data:
+                    username_entry.insert(0, data[website]['username'])
+                    pw_entry.insert(0, data[website]['password'])
         except FileNotFoundError as e:
             print(f"File not found: {e.filename}")
 
@@ -34,7 +35,7 @@ def main():
     # ---------------------------- SAVE PASSWORD ------------------------------- #
     def save_password():
         """Ask for verification and save password entry to file"""
-        website = website_entry.get()
+        website = website_entry.get().title()
         username = username_entry.get()
         password = pw_entry.get()
 
