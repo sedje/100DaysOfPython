@@ -98,7 +98,7 @@ def main():
     pw_entry.grid(column=1, row=3)
     pw_label.grid(column=0, row=3)
     generate.grid(column=2, row=3)
-    #add button
+    # add button
     add_pw = Button(text="Add", command=save_password)
     add_pw.grid(column=1, row=4, columnspan=4, sticky=E+W)
     canvas.grid(column=0, row=0, columnspan=4, sticky=E+W)
