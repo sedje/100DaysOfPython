@@ -65,8 +65,6 @@ def main():
         time.sleep(60)
         if is_overhead():
             mail("Look up!", "The ISS is over your head right now!", "mail@example.com")
-        else:
-            print("Not there")
 
 
 if __name__ == '__main__':
