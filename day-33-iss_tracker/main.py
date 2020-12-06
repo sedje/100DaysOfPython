@@ -18,9 +18,6 @@ def is_near():
         iss_latitude = float(data["iss_position"]["latitude"])
         iss_longitude = float(data["iss_position"]["longitude"])
 
-    #iss_latitude = 52.156113
-    #iss_longitude = 5.3
-
     if MY_LAT-5 <= iss_latitude <= MY_LAT+5 and MY_LONG-5 <= iss_longitude <= MY_LONG+5:
         return True
     return False
@@ -64,7 +61,6 @@ def mail(subject, message, recipient):
 
 
 def main():
-
     while True:
         time.sleep(60)
         if is_overhead():
