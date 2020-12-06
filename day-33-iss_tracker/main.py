@@ -68,7 +68,7 @@ def main():
     while True:
         time.sleep(60)
         if is_overhead():
-            mail("Look up!", "The ISS is over your head right now!", "sedulus@gmail.com")
+            mail("Look up!", "The ISS is over your head right now!", "mail@example.com")
         else:
             print("Not there")
 
