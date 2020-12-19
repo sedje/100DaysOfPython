@@ -18,11 +18,10 @@ def send_text(message):
     auth_token = os.environ['TWILIO_AUTH']
     my_phone = os.environ['MY_PHONE']
     from_phone = os.environ['TWILIO_PHONE']
-    try:
-        environment = os.environ['PYTHONANYWHERE_DOMAIN']
+    if "PYTHONANYWHERE_DOMAIN" in os.environ:
         proxy_client = TwilioHttpClient()
         proxy_client.session.proxies = {'https': os.environ['https_proxy']}
-    except KeyError:
+    else:
         proxy_client = None
 
     client = Client(account_sid, auth_token, http_client=proxy_client)
@@ -33,6 +32,7 @@ def send_text(message):
         to=my_phone
     )
     print(message.status)
+
 
 def check_prices(symbol):
     stock_key = os.environ['ALPHA_KEY']
@@ -81,14 +81,14 @@ def main():
         news = get_news(STOCK_NAME)
         for article in news:
             message = (f"{STOCK_NAME} {UP_SYMBOL} {change_percent:.2f}\n Headline: {article['title']}, "
-                  f"brief:{article['description']} URL:{article['url']}")
+                       f"brief:{article['description']} URL:{article['url']}")
             print(message)
             send_text(message)
     elif change_percent <= -MAX_CHANGE:
         news = get_news(STOCK_NAME)
         for article in news:
             message = (f"{STOCK_NAME} {DOWN_SYMBOL} {change_percent:.2f}\n Headline: {article['title']}, "
-                  f"brief:{article['description']} URL:{article['url']}")
+                       f"brief:{article['description']} URL:{article['url']}")
             print(message)
             send_text(message)
     else:
