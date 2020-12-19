@@ -60,13 +60,13 @@ def get_news(symbol):
     news_endpoint = "https://newsapi.org/v2/everything"
     news_key = os.environ['NEWS_KEY']
     start_date = datetime.date.today() + datetime.timedelta(days=-1)
+    headers = { "X-API-KEY": news_key}
     parameters = {
         "q": symbol,
         "from": start_date,
-        "sortBy": "popularity",
-        "apiKey": news_key
+        "sortBy": "popularity"
     }
-    data = requests.get(news_endpoint, params=parameters)
+    data = requests.get(news_endpoint, params=parameters, headers=headers)
     data.raise_for_status()
     articles = [article for article in data.json()['articles'][:MAX_ARTICLES]]
     return articles
