@@ -24,7 +24,9 @@ table {
 thead {
     font-weight: bold;
 }
-
+.years {
+    white-space: nowrap;
+}
 .heading {
     display: grid;
     grid-template-columns: 1fr 3fr;
