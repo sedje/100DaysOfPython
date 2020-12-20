@@ -3,6 +3,7 @@ body {
     color: #000070;
     margin: 0;
 }
+
 .container {
     display: grid;
     grid-template-columns: 1fr;
