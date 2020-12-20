@@ -10,7 +10,6 @@ a, a.visited, a.hover {
 }
 .container {
     display: grid;
-
     grid-template-columns: 1fr;
 }
 .profile_picture {
@@ -19,7 +18,7 @@ a, a.visited, a.hover {
 table {
     border-spacing: 5px;
     border-collapse: separate;
-table-layout:fixed;
+    table-layout:fixed;
 }
 thead {
     font-weight: bold;
@@ -42,7 +41,6 @@ thead {
 .experience {
     display: grid;
     grid-template-columns: 2fr 2fr;
-
 }
 .work-experience {
     margin: 10px 10px 0 0;
