@@ -19,7 +19,7 @@ a, a.visited, a.hover {
 table {
     border-spacing: 5px;
     border-collapse: separate;
-
+table-layout:fixed;
 }
 thead {
     font-weight: bold;
