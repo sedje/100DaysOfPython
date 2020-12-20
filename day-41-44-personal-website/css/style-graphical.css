@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    color: white
+}
+nav {
+    position: fixed;
+    margin: 10px;
+    width: 80%;
+    left: 50%;
+    transform: translate(-50%);
+}
+@font-face {
+    font-family: SourceCodePro;
+    src: url(fonts/SourceCodePro-Regular.ttf);
+    }
+@font-face {
+    font-family: SourceCodePro-Italic;
+    src: url(fonts/SourceCodePro-Italic.ttf);
+}
+.main {
+    background: url(../images/network.svg) no-repeat right, linear-gradient(180deg, #9df3c4, #d7fbe8);
+    height: 100vh;
+    padding-top: 30px;
+}
+.main-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.main-name {
+    text-align: center;
+    font-family: SourceCodePro;
+    color: #000099;
+}
+.main-description {
+    font-family: SourceCodePro-Italic;
+    color: #000070;
+}
+.about {
+    height: 100vh;
+    background: linear-gradient(180deg, #d7fbe8, #9df3c4);
+}
+.contact {
+    height: 100vh;
+    background: linear-gradient(180deg, #9df3c4, #d7fbe8);
+}
