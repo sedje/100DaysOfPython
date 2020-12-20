@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #000070
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #1fab89;
+}
+a, a.visited, a.hover {
+    color: #1fab89
+}
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.profile_picture {
+    border-radius: 50%;
+}
+.heading {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    padding: 10px;
+    background: linear-gradient(90deg, #9df3c4, #d7fbe8);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+.heading-text {
+    margin: auto;
+    margin-left: 20px;
+}
+.experience {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+
+}
+.work-experience {
+    margin: 10px 10px 0 0;
+    padding: 0 10px 0 10px;
+    background: #d7fbe8;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+.teaching {
+    margin: 10px 0 0 0;
+    padding: 0 10px 0 10px;
+    background: #d7fbe8;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
