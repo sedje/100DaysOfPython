@@ -1,3 +1,8 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 20px 20% 0 20%;
+}
 .profile_picture {
     border-radius: 50%;
 }
