@@ -70,8 +70,8 @@ def main():
     to_watch.reverse()
 
     # Write the list to a file.
-    for movie in to_watch:
-        with open("To_Watch.txt", "a") as watchlist:
+    with open("To_Watch.txt", "w") as watchlist:
+        for movie in to_watch:
             watchlist.write(f"{to_watch.index(movie)+1}) {movie}\n")
 
 
