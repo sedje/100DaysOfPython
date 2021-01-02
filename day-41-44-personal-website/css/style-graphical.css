@@ -1,6 +1,5 @@
 body {
     margin: 0;
-    color: white
 }
 nav {
     position: fixed;
@@ -22,7 +21,7 @@ nav {
     src: url(fonts/SourceCodePro-Italic.ttf);
 }
 .main {
-    background: url(../images/network.svg) no-repeat right, linear-gradient(180deg, #9df3c4, #d7fbe8);
+    background: url(../images/network.svg) no-repeat right, linear-gradient(180deg, #0f3057, #e7e7de);
     height: 90vh;
     display: grid;
 }
@@ -32,21 +31,19 @@ nav {
 .main-name {
     text-align: center;
     font-family: SourceCodePro;
-    color: #000099;
 }
 .main-description {
     font-family: SourceCodePro-Italic;
-    color: #000070;
 }
 .about {
-    height: 90vh;
+    height: 105vh;
     display:grid;
-    background: linear-gradient(180deg, #d7fbe8, #9df3c4);
+    background: linear-gradient(180deg, #e7e7de, #0f3057);
 }
 .contact {
-    height: 90vh;
+    height: 95vh;
     display:grid;
-    background: linear-gradient(180deg, #9df3c4, #d7fbe8);
+    background: linear-gradient(180deg, #0f3057, #e7e7de);
 }
 .contact-main {
     position: relative;
@@ -61,6 +58,6 @@ nav {
 }
 .contact-main-text {
     margin: 10px;
-    color: #000099;
+    color: #00587a;
     font-family: SourceCodePro;
 }
