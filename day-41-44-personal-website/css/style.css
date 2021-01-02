@@ -1,10 +1,17 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: SourceCodePro, Arial, sans-serif;
     color: #000070;
     margin: 0;
 }
-
-.container {
+@font-face {
+    font-family: SourceCodePro;
+    src: url(fonts/SourceCodePro-Regular.ttf);
+    }
+@font-face {
+    font-family: SourceCodePro-Italic;
+    src: url(fonts/SourceCodePro-Italic.ttf);
+}
+.container, .container-text{
     display: grid;
     grid-template-columns: 1fr;
 }

@@ -1,47 +1,51 @@
 body {
-    margin: 0;
-}
-nav {
-    position: fixed;
-    margin: 10px;
-    width: 80%;
-    left: 50%;
-    transform: translate(-50%);
+
 }
 .favicon {
     height: 20px;
     width: 20px;
 }
-@font-face {
-    font-family: SourceCodePro;
-    src: url(fonts/SourceCodePro-Regular.ttf);
-    }
-@font-face {
-    font-family: SourceCodePro-Italic;
-    src: url(fonts/SourceCodePro-Italic.ttf);
-}
 .main {
     background: url(../images/network.svg) no-repeat right, linear-gradient(180deg, #0f3057, #e7e7de);
-    height: 90vh;
+    height: 100vh;
     display: grid;
 }
 .main-text {
+    font-family: SourceCodePro-Italic;
     place-self: center;
 }
 .main-name {
     text-align: center;
-    font-family: SourceCodePro;
 }
-.main-description {
-    font-family: SourceCodePro-Italic;
-}
+/* CSS FOR ABOUT SECTION */
+
 .about {
-    height: 105vh;
-    display:grid;
+    height: 100vh;
     background: linear-gradient(180deg, #e7e7de, #0f3057);
 }
+.about-flex {
+    display: flex;
+    flex-flow: row wrap;
+}
+.about-training, .about-work, .about-personal {
+    border-radius: 15px;
+    padding: 10px;
+    background: white;
+    text-align: center;
+    width: 100%;
+    place-self: end;
+}
+
+.div-link {
+    text-decoration: none;
+}
+.link {
+    text-decoration: underline
+}
+
+/* CSS FOR CONTACT SECTION */
 .contact {
-    height: 95vh;
+    height: 100vh;
     display:grid;
     background: linear-gradient(180deg, #0f3057, #e7e7de);
 }

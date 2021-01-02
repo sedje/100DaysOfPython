@@ -1,7 +1,26 @@
 
-.container {
+.container-text {
     margin: 0 0 0 0;
     max-width: 100%;
     width: 100%;
 }
 
+.about-box {
+    flex: 1 0 100%;
+    min-height: 20vh;
+}
+.about-flex {
+    justify-content: center;
+}
+.about-box {
+    flex: 1 0 80%;
+    min-height: 25vh;
+    max-width: 50vh;
+    margin: 10 5 px;
+}
+body {
+    font-size: 80%;
+}
+.empty {
+    display: none
+}
