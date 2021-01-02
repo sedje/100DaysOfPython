@@ -9,6 +9,10 @@ nav {
     left: 50%;
     transform: translate(-50%);
 }
+.favicon {
+    height: 20px;
+    width: 20px;
+}
 @font-face {
     font-family: SourceCodePro;
     src: url(fonts/SourceCodePro-Regular.ttf);
