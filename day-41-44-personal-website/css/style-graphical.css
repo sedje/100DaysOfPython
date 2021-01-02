@@ -19,14 +19,11 @@ nav {
 }
 .main {
     background: url(../images/network.svg) no-repeat right, linear-gradient(180deg, #9df3c4, #d7fbe8);
-    height: 100vh;
-    padding-top: 30px;
+    height: 90vh;
+    display: grid;
 }
 .main-text {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    place-self: center;
 }
 .main-name {
     text-align: center;
@@ -38,10 +35,28 @@ nav {
     color: #000070;
 }
 .about {
-    height: 100vh;
+    height: 90vh;
+    display:grid;
     background: linear-gradient(180deg, #d7fbe8, #9df3c4);
 }
 .contact {
-    height: 100vh;
+    height: 90vh;
+    display:grid;
     background: linear-gradient(180deg, #9df3c4, #d7fbe8);
+}
+.contact-main {
+    position: relative;
+    place-self: center;
+    width: 50%;
+    border-radius: 15px;
+    background: white;
+
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+}
+.contact-main-text {
+    margin: 10px;
+    color: #000099;
+    font-family: SourceCodePro;
 }
