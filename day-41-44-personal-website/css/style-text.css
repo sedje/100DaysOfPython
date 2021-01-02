@@ -31,14 +31,7 @@
 .profile_picture {
     border-radius: 50%;
 }
-table {
-    border-spacing: 5px;
-    border-collapse: separate;
-    table-layout:fixed;
-}
-thead {
-    font-weight: bold;
-}
+
 .years {
     white-space: nowrap;
 }
