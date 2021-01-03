@@ -5,6 +5,12 @@
     flex: 1 0 33%;
     min-height: 20vh;
 }
+.about {
+    height: 100vh;
+}
+.contact-main {
+    width: 50%;
+}
 .about-flex {
     padding: 100px;
 }

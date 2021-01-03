@@ -4,6 +4,9 @@
     max-width: 100%;
     width: 100%;
 }
+.contact-main {
+    width: 80%;
+}
 
 .about-box {
     flex: 1 0 100%;
@@ -15,7 +18,7 @@
 .about-box {
     flex: 1 0 80%;
     min-height: 25vh;
-    max-width: 50vh;
+    max-width: 80%;
     margin: 10 5 px;
 }
 body {

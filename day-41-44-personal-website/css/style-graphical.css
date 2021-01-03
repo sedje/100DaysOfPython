@@ -20,7 +20,6 @@ body {
 /* CSS FOR ABOUT SECTION */
 
 .about {
-    height: 100vh;
     background: linear-gradient(180deg, #e7e7de, #0f3057);
 }
 .about-flex {
@@ -52,7 +51,6 @@ body {
 .contact-main {
     position: relative;
     place-self: center;
-    width: 50%;
     border-radius: 15px;
     background: white;
     text-align: center;
