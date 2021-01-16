@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block body %}
+    <div class="top">
+        <div class="title"><h1>My Blog</h1></div>
+    </div>
+{% for blog in posts %}
+    <div class="content">
+        <div class="card">
+    <h2>{{ blog['title'] }}</h2>
+    <h3>{{ blog['subtitle'] }}</h3>
+    <p><a href="{{ url_for('get_post', post_id=posts.index(blog)) }}">Read more</a></p>
+            </div>
+    </div>
+{% endfor %}
+{% endblock %}
