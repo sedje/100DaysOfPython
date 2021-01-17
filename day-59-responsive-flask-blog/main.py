@@ -1,14 +1,12 @@
 import requests
-import smtplib
-import os
+from mailer import Mailer
 from flask import Flask, render_template, request
-from dotenv import load_dotenv
 
-load_dotenv(".env")
 
 app = Flask(__name__)
 
 all_posts = requests.get("https://api.npoint.io/5abcca6f4e39b4955965").json()
+mailer = Mailer()
 
 
 @app.route("/")
@@ -42,21 +40,7 @@ def send_email():
                     f"Phone: {phone}\n\n" \
                     f"{message}"
 
-    my_email = os.getenv('EMAIL')
-    username = os.getenv('EMAIL_USERNAME')
-    password = os.getenv('EMAIL_PASSWORD')
-    subject = f"Subject:Website feedback\n\n"
-
-    try:
-        with smtplib.SMTP("smtp.gmail.com") as connection:
-            connection.starttls()
-            connection.login(user=username, password=password)
-            connection.sendmail(
-                from_addr=my_email,
-                to_addrs=my_email,
-                msg=f"{subject}{email_content}")
-    except smtplib.SMTPAuthenticationError:
-        pass
+    mailer.send_mail(message=email_content)
 
     return render_template("sent.html")
 
