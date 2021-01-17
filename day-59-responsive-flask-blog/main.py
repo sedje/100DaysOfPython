@@ -31,14 +31,12 @@ def contact():
 
 @app.route("/send", methods=['POST'])
 def send_email():
-    name = request.form.get('name')
-    email = request.form.get('email')
-    phone = request.form.get('phone')
-    message = request.form.get('message')
-    email_content = f"Name: {name}\n" \
-                    f"E-mail: {email}\n" \
-                    f"Phone: {phone}\n\n" \
-                    f"{message}"
+    form_data = request.form
+
+    email_content = f"Name: {form_data['name']}\n" \
+                    f"E-mail: {form_data['email']}\n" \
+                    f"Phone: {form_data['phone']}\n\n" \
+                    f"{form_data['message']}"
 
     mailer.send_mail(message=email_content)
 
