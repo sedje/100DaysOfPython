@@ -17,9 +17,11 @@
         </thead>
         {% for book in books %}
         <tr>
-            <td>{{ book['name'] }}</td>
+            <td>{{ book['title'] }}</td>
             <td>{{ book['author'] }}</td>
             <td>{{ book['rating'] }}</td>
+            <td><a href="{{ url_for('edit', book_id=book['id'] )}}">Edit Rating</a></td>
+            <td><a href="{{ url_for('delete', book_id=book['id'] )}}">Delete Book</a></td>
         </tr>
         {% endfor %}
     </table>
