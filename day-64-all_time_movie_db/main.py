@@ -76,7 +76,7 @@ def edit(movie_id):
     if form.validate_on_submit():
         movie_to_update = Movie.query.get(movie_id)
         movie_to_update.rating = form.rating.data
-        movie_to_update.review = form.review.data
+        movie_to_update.reviewtop = form.review.data
         db.session.commit()
         return redirect(url_for('home'))
     return render_template("edit.html", edit_form=form)
