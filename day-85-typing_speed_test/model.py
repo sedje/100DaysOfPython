@@ -8,11 +8,16 @@ class WordList:
         self.highscore = HighScore()
         self.current_word = ''
         self.wordlist = []
-        self.current_line = []
-        self.lines = []
-        self.line_position = 0
         for word in open('wordlist.txt').readlines():
             self.wordlist.append(word.strip())
+
+        self.line_position = 0
+        self.lines = []
+        for i in range(MAX_LL*3):
+            word = random.choice(self.wordlist).lower()
+            if (i+1) % MAX_LL == 0:
+                word = f"{word}\n"
+            self.lines.append(word)
 
     def get_word(self):
         return self.lines[self.line_position]
@@ -34,22 +39,13 @@ class WordList:
         return self.lines
 
     def get_newline(self):
-        if not self.lines:
-            for i in range(MAX_LL*3):
-                word = random.choice(self.wordlist).lower()
-                if (i+1) % MAX_LL == 0:
-                    word += "\n"
-                self.lines.append(word)
-        else:
-            for i in range(MAX_LL):
-                del self.lines[0]
-                word = random.choice(self.wordlist).lower()
-                if (i + 1) % MAX_LL == 0:
-                    word += f"{word}\n"
-                self.lines.append(word)
-
         for i in range(MAX_LL):
-            self.current_line.append(self.lines[i])
+            del self.lines[0]
+            word = random.choice(self.wordlist).lower()
+            if (i + 1) % MAX_LL == 0:
+                word = f"{word}\n"
+            self.lines.append(word)
+
         return self.lines
 
 
