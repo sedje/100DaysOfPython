@@ -30,9 +30,10 @@ class Controller:
             pass
 
     def reset_all(self):
+        self.wordlist.__init__()
+        self.highscore.__init__()
         self.view1.set_line(self.wordlist.get_newline())
         self.view1.set_word(self.wordlist.get_word())
-        self.highscore.reset()
         self.highscoreview.set_score(self.highscore.get_highscore())
 
     def run(self):

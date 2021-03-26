@@ -5,7 +5,6 @@ MAX_LL = 6
 
 class WordList:
     def __init__(self):
-        self.highscore = HighScore()
         self.current_word = ''
         self.wordlist = []
         for word in open('wordlist.txt').readlines():
@@ -61,7 +60,3 @@ class HighScore:
 
     def get_highscore(self):
         return [self.highscore, self.cpm]
-
-    def reset(self):
-        self.highscore = 0
-        self.cpm = 0
