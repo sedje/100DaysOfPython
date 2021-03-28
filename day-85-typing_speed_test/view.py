@@ -44,3 +44,14 @@ class HighScoreView:
 
     def set_score(self, score):
         self.score_label.config(text=f"Words correct: {score[0]}\nCPM: {score[1]}")
+
+
+class TimerView:
+    def __init__(self, master):
+        self.timer = tk.Canvas(master)
+        self.timer.grid(column=0, row=1)
+        self.timer_text = tk.Label(self.timer, text="Timer: ")
+        self.timer_text.grid(column=0, row=0)
+
+    def update_timer(self, time):
+        self.timer_text.config(text=f"Timer: {time}")

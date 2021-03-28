@@ -60,3 +60,19 @@ class HighScore:
 
     def get_highscore(self):
         return [self.highscore, self.cpm]
+
+
+class Timer:
+    def __init__(self, master, timer_view):
+        self.window = master
+        self.view = timer_view
+        self.time = 60
+
+    def get_time(self):
+        return self.time
+
+    def reduce_time(self):
+        if self.time > 0:
+            self.time -= 1
+            self.view.update_timer(self.time)
+            self.window.after(1000, self.reduce_time)
