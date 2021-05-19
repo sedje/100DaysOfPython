@@ -1,0 +1,15 @@
+{% extends "bootstrap/base.html" %}
+{% block title%}Coffee and Wifi{% endblock %}
+{% block body %}
+{% include 'header.html' %}
+<div class="container">
+    <div class="cafe-image"><img class="cafe-image" src="{{cafe.img_url}}"></div>
+    <h1>{{cafe.name}}</h1>
+    <i class="fa fa-fw fa-coffee"></i> {{cafe.coffee_price}}</br>
+    {% if cafe.has_sockets == 1 %} <i class="fas fa-plug"></i> Has sockets</br>{% endif %}
+    {% if cafe.has_wifi == 1 %} <i class="fas fa-wifi"></i> Has wifi</br>{% endif %}
+    {% if cafe.has_toilet == 1 %} <i class="fas fa-toilet-paper"></i> Has toilets{% else %} <i class="fas fa-toilet-paper-slash"></i> Has no toilet</br>{% endif %}
+
+
+{% include "footer.html" %}
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "bootstrap/base.html" %}
+{% block title%}Coffee and Wifi{% endblock %}
+{% block body %}
+{% include "header.html" %}
+<div class="container">
+    <h1>List of {{cafes|length}} cafe's</h1>
+        {% for cafe in cafes %}
+        <div class="card-container">
+                <a class="cafe_card" href="{{ url_for('get_cafe', cafe_id=cafe.id)}}">
+                <div class="card-image">
+                    <img width="200px" src="{{cafe.img_url}}"/>
+                </div>
+                <div class="card-body">
+                    <p><strong>{{ cafe.name }}</strong></br>
+                    Seats: {{ cafe.seats }}</br>
+                    Coffee: {{ cafe.coffee_price }}</br>
+                    Location: <a href="{{cafe.map_url}}" target="_blank" class="card">{{ cafe.location }}</a></p>
+                </div>
+                </a>
+        </div>
+        {% endfor %}
+</div>
+{% include "footer.html" %}
+{% endblock %}
+

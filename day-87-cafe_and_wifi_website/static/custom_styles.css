@@ -1,0 +1,20 @@
+body {
+
+}
+.card-container {
+  border: 1px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 5px; /* 5px rounded corners */
+  margin: 3px;
+}
+.card-image {
+    display:inline-block;
+}
+.card-body {
+    vertical-align: middle;
+    display:inline-block;
+}
+.cafe-image {
+ height: 200px;
+}
